@@ -76,23 +76,27 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen gradient-bg text-foreground">
       {/* Header */}
-      <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Icon name="Box" className="h-8 w-8 text-orange-500" />
-              <h1 className="text-2xl font-bold text-orange-500">Miveltic3D</h1>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="https://cdn.poehali.dev/files/884287a5-dfd3-4103-be0b-2db226ef7ba0.jpg" 
+                alt="Miveltic3D Logo" 
+                className="h-12 w-12 rounded-full object-cover"
+              />
+              <h1 className="text-2xl text-thin text-gray-900 dark:text-white">Miveltic3D</h1>
             </div>
             
             <nav className="hidden md:flex items-center space-x-6">
-              <a href="#home" className="hover:text-orange-500 transition-colors">Главная</a>
-              <a href="#catalog" className="hover:text-orange-500 transition-colors">Каталог</a>
-              <a href="#services" className="hover:text-orange-500 transition-colors">3D Печать</a>
-              <a href="#calculator" className="hover:text-orange-500 transition-colors">Калькулятор</a>
-              <a href="#about" className="hover:text-orange-500 transition-colors">О нас</a>
-              <a href="#contact" className="hover:text-orange-500 transition-colors">Контакты</a>
+              <a href="#home" className="text-light hover:text-orange-600 transition-colors">Главная</a>
+              <a href="#catalog" className="text-light hover:text-orange-600 transition-colors">Каталог</a>
+              <a href="#services" className="text-light hover:text-orange-600 transition-colors">3D Печать</a>
+              <a href="#calculator" className="text-light hover:text-orange-600 transition-colors">Калькулятор</a>
+              <a href="#about" className="text-light hover:text-orange-600 transition-colors">О нас</a>
+              <a href="#contact" className="text-light hover:text-orange-600 transition-colors">Контакты</a>
             </nav>
 
             <div className="flex items-center space-x-4">
@@ -105,7 +109,7 @@ export default function Index() {
                 />
                 <Icon name="Moon" className="h-4 w-4" />
               </div>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="text-light border-gray-300 hover:bg-orange-50">
                 <Icon name="ShoppingCart" className="h-4 w-4 mr-2" />
                 Корзина
               </Button>
@@ -115,21 +119,21 @@ export default function Index() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-950/20 dark:to-yellow-950/20">
+      <section id="home" className="py-20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl font-bold mb-6">
-              Профессиональная <span className="text-orange-500">3D печать</span> и <span className="text-yellow-500">электроника</span>
+            <h2 className="text-5xl text-thin mb-6 text-gray-900 dark:text-white">
+              Профессиональная <span className="text-orange-600">3D печать</span> и <span className="text-yellow-600">электроника</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-light text-gray-700 dark:text-gray-300 mb-8">
               Создаем будущее с помощью современных технологий. 3D печать, покраска, электронные компоненты — все в одном месте.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+              <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50 border border-orange-200 text-medium">
                 <Icon name="Printer" className="mr-2 h-5 w-5" />
                 Заказать печать
               </Button>
-              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50">
+              <Button size="lg" className="bg-white text-yellow-600 hover:bg-yellow-50 border border-yellow-200 text-medium">
                 <Icon name="Calculator" className="mr-2 h-5 w-5" />
                 Рассчитать стоимость
               </Button>
@@ -139,9 +143,9 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16">
+      <section id="services" className="py-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Наши услуги</h2>
+          <h2 className="text-3xl text-thin text-center mb-12 text-gray-900 dark:text-white">Наши услуги</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow duration-300 animate-fade-in">
@@ -149,13 +153,13 @@ export default function Index() {
                   <div className="mx-auto mb-4 p-3 bg-orange-100 dark:bg-orange-900/20 rounded-full w-16 h-16 flex items-center justify-center">
                     <Icon name={service.icon} className="h-8 w-8 text-orange-500" />
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardTitle className="text-xl text-medium text-gray-900 dark:text-white">{service.title}</CardTitle>
+                  <CardDescription className="text-light text-gray-600 dark:text-gray-400">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
+                      <li key={idx} className="flex items-center text-sm text-light text-gray-700 dark:text-gray-300">
                         <Icon name="Check" className="h-4 w-4 text-green-500 mr-2" />
                         {feature}
                       </li>
@@ -169,17 +173,17 @@ export default function Index() {
       </section>
 
       {/* Calculator Section */}
-      <section id="calculator" className="py-16 bg-muted/50">
+      <section id="calculator" className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">Калькулятор стоимости</h2>
-            <Card className="animate-scale-in">
+            <h2 className="text-3xl text-thin text-center mb-8 text-gray-900 dark:text-white">Калькулятор стоимости</h2>
+            <Card className="animate-scale-in bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="flex items-center">
+                <CardTitle className="flex items-center text-medium text-gray-900 dark:text-white">
                   <Icon name="Calculator" className="mr-2 h-5 w-5 text-orange-500" />
                   Рассчитать стоимость печати
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-light text-gray-600 dark:text-gray-400">
                   Загрузите STL файл и получите точную стоимость изготовления
                 </CardDescription>
               </CardHeader>

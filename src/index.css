@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +99,44 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(
+      135deg,
+      #ffd700 0%,
+      #ffa500 25%,
+      #ff8c00 50%,
+      #ffa500 75%,
+      #ffd700 100%
+    );
+    background-size: 400% 400%;
+    animation: gradient-flow 8s ease infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .text-thin {
+    font-weight: 200;
+  }
+
+  .text-light {
+    font-weight: 300;
+  }
+
+  .text-medium {
+    font-weight: 500;
   }
 }
